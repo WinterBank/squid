@@ -284,12 +284,12 @@ default-members = [
 # All workspace members should inherit these keys
 # for package declarations.
 [workspace.package]
-authors = ["Aptos Labs <opensource@aptoslabs.com>"]
+authors = ["Peerlync <squid@peerlync.com>"]
 edition = "2021"
-homepage = "https://aptoslabs.com"
+homepage = "https://peerlync.com"
 license = "Apache-2.0"
 publish = false
-repository = "https://github.com/aptos-labs/aptos-core"
+repository = "https://github.com/winterbank/squid"
 rust-version = "1.78.0"
 
 [workspace.dependencies]
@@ -475,6 +475,7 @@ aptos-vm-validator = { path = "vm-validator" }
 aptos-workspace-server = { path = "aptos-move/aptos-workspace-server" }
 aptos-warp-webserver = { path = "crates/aptos-warp-webserver" }
 aptos-cargo-cli = { path = "devtools/aptos-cargo-cli" }
+squid-mining = { path = "mining" }
 
 # External crate dependencies.
 # Please do not add any test features here: they should be declared by the individual crate.
@@ -498,6 +499,7 @@ ark-groth16 = "0.4.0"
 ark-relations = "0.4.0"
 ark-serialize = "0.4.0"
 ark-std = { version = "0.4.0", features = ["getrandom"] }
+argon2 = "0.5.3"
 aptos-moving-average = { git = "https://github.com/aptos-labs/aptos-indexer-processors.git", rev = "3064a075e1abc06c60363f3f2551cc41f5c091de" }
 assert_approx_eq = "1.1.0"
 async-channel = "1.7.1"
