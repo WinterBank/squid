@@ -151,6 +151,7 @@ members = [
     "keyless/pepper/example-client-rust",
     "keyless/pepper/service",
     "mempool",
+    "mining",
     "network/benchmark",
     "network/builder",
     "network/discovery",

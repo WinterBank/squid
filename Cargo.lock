@@ -4777,6 +4777,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bddcadddf5e9015d310179a59bb28c4d4b9920ad0f11e8e14dbadf654890c9a6"
 
 [[package]]
+name = "argon2"
+version = "0.5.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3c3610892ee6e0cbce8ae2700349fcf8f98adb0dbfbee85aec3c9179d29cc072"
+dependencies = [
+ "base64ct",
+ "blake2",
+ "cpufeatures",
+ "password-hash",
+]
+
+[[package]]
 name = "ark-bls12-381"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -9549,7 +9561,7 @@ dependencies = [
  "httpdate",
  "itoa",
  "pin-project-lite",
- "socket2 0.4.10",
+ "socket2 0.5.5",
  "tokio",
  "tower-service",
  "tracing",
@@ -12230,7 +12242,7 @@ version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fcc7c92f190c97f79b4a332f5e81dcf68c8420af2045c936c9be0bc9de6f63b5"
 dependencies = [
- "proc-macro-crate 1.3.1",
+ "proc-macro-crate 3.1.0",
  "proc-macro2",
  "quote",
  "syn 1.0.109",
@@ -12841,6 +12853,17 @@ dependencies = [
  "sha2 0.10.8",
  "strum 0.25.0",
  "typeshare",
+]
+
+[[package]]
+name = "password-hash"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "346f04948ba92c43e8469c1ee6736c7563d71012b17d40745260fe106aac2166"
+dependencies = [
+ "base64ct",
+ "rand_core 0.6.4",
+ "subtle",
 ]
 
 [[package]]
@@ -15986,6 +16009,48 @@ dependencies = [
 ]
 
 [[package]]
+name = "squid-mining"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-bitvec",
+ "aptos-bounded-executor",
+ "aptos-channels",
+ "aptos-collections",
+ "aptos-config",
+ "aptos-consensus-notifications",
+ "aptos-consensus-types",
+ "aptos-crypto",
+ "aptos-crypto-derive",
+ "aptos-dkg",
+ "aptos-enum-conversion-derive",
+ "aptos-event-notifications",
+ "aptos-executor",
+ "aptos-executor-types",
+ "aptos-experimental-runtimes",
+ "aptos-fallible",
+ "aptos-infallible",
+ "aptos-logger",
+ "aptos-mempool",
+ "aptos-metrics-core",
+ "aptos-network",
+ "aptos-peer-monitoring-service-types",
+ "aptos-reliable-broadcast",
+ "aptos-runtimes",
+ "aptos-safety-rules",
+ "aptos-schemadb",
+ "aptos-secure-storage",
+ "aptos-short-hex-str",
+ "aptos-storage-interface",
+ "aptos-temppath",
+ "aptos-time-service",
+ "aptos-types",
+ "aptos-validator-transaction-pool",
+ "aptos-vm",
+ "argon2",
+]
+
+[[package]]
 name = "stable_deref_trait"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -17549,7 +17614,7 @@ dependencies = [
  "errno",
  "js-sys",
  "libc",
- "rustix 0.37.27",
+ "rustix 0.38.28",
  "wasi 0.11.0+wasi-snapshot-preview1",
  "wasm-bindgen",
  "winapi 0.3.9",
