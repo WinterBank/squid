@@ -118,6 +118,7 @@ members = [
     "crates/transaction-workloads-lib",
     "crates/validator-transaction-pool",
     "devtools/aptos-cargo-cli",
+    "distribution",
     "dkg",
     "ecosystem/indexer-grpc/indexer-grpc-cache-worker",
     "ecosystem/indexer-grpc/indexer-grpc-data-service",
@@ -151,7 +152,6 @@ members = [
     "keyless/pepper/example-client-rust",
     "keyless/pepper/service",
     "mempool",
-    "mining",
     "network/benchmark",
     "network/builder",
     "network/discovery",
@@ -476,7 +476,7 @@ aptos-vm-validator = { path = "vm-validator" }
 aptos-workspace-server = { path = "aptos-move/aptos-workspace-server" }
 aptos-warp-webserver = { path = "crates/aptos-warp-webserver" }
 aptos-cargo-cli = { path = "devtools/aptos-cargo-cli" }
-squid-mining = { path = "mining" }
+squid-distribution = { path = "distribution" }
 
 # External crate dependencies.
 # Please do not add any test features here: they should be declared by the individual crate.
