@@ -3999,8 +3999,14 @@
 │   │   ├── Cargo.toml
 │   │   ├── README.md
 │   │   └── src
-│   │       ├── block.rs
+│   │       ├── commands
+│   │       │   ├── benchmark.rs
+│   │       │   ├── diff.rs
+│   │       │   ├── download.rs
+│   │       │   ├── initialize.rs
+│   │       │   └── mod.rs
 │   │       ├── diff.rs
+│   │       ├── execution.rs
 │   │       ├── generator.rs
 │   │       ├── lib.rs
 │   │       ├── main.rs
@@ -4048,81 +4054,6 @@
 │   └── packer
 │       ├── aws-ubuntu.pkr.hcl
 │       └── user_data.sh
-├── cache
-│   ├── audio
-│   │   └── speech
-│   ├── embedding
-│   │   └── models
-│   │       ├── hub
-│   │       │   └── version.txt
-│   │       └── models--sentence-transformers--all-MiniLM-L6-v2
-│   │           ├── blobs
-│   │           │   ├── 1391c6fc20b5530250bc15cbe1f47578ffeca55ab0551d335cc668b6299a88ec
-│   │           │   ├── 1667d7f3ba669048b13a96ee3a44456d5e42c8f44588ae8b603430e16160c485
-│   │           │   ├── 1de3905029190b398c7d300b530e320cf4b5e7d3dfb9af1429ebd73fd9a16faf
-│   │           │   ├── 24c06a7429b843d46e40c6b167122053921bf94dce2e5550ea5c07fabc597646
-│   │           │   ├── 2bf99854609538f90af03c921c41a0cbde670b2f
-│   │           │   ├── 2d98d96d278348988f2744e6445b8bc16d921c3f6e17c667362f3cb353007aea
-│   │           │   ├── 2e85f0eac205cf444bdf97ede4935603ca6a0416
-│   │           │   ├── 4278337fd0ff3c68bfb6291042cad8ab363e1d9fbc43dcb499fe91c871902474
-│   │           │   ├── 53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db
-│   │           │   ├── 59d594003bf59880a884c574bf88ef7555bb0202
-│   │           │   ├── 5d24a16700f0198908929370f59330fb8d486b1b
-│   │           │   ├── 6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452
-│   │           │   ├── 7152d195a075cf3f3dc3c3d6308d845f88e0117f
-│   │           │   ├── 72b987fd805cfa2b58c4c8c952b274a11bfd5a00
-│   │           │   ├── 82b47b6277499b8f17d139d0c651a6f961c06124
-│   │           │   ├── 8b86cab4722e2aefab310cf96d4d5a9eb3b187f7d9670a082afc55c7fa0d392a
-│   │           │   ├── 8cfec92309f5626a223304af2423e332f6d31887
-│   │           │   ├── 952a9b81c0bfd99800fabf352f69c7ccd46c5e43
-│   │           │   ├── a44f671e364dddbac31f203f07b91be6b0a35e51936e5ebfab65b6d9538b83ff
-│   │           │   ├── b941bf19f1f1283680f449fa6a7336bb5600bdcd5f84d10ddc5cd72218a0fd21
-│   │           │   ├── c3a85f238711653950f6a79ece63eb0ea93d76f6a6284be04019c53733baf256
-│   │           │   ├── c79f2b6a0cea6f4b564fed1938984bace9d30ff0
-│   │           │   ├── c92ea4af3c6bc7b4a0f3b3d61b147c850f4dbdd7c9e7beee0c0c70dc12da289b
-│   │           │   ├── cb202bfe2e3c98645018a6d12f182a434c9d3e02
-│   │           │   ├── d1514c3162bbe87b343f565fadc62e6c06f04f03
-│   │           │   ├── e7b0375001f109a6b8873d756ad4f7bbb15fbaa5
-│   │           │   ├── fb140275c155a9c7c5a3b3e0e77a9e839594a938
-│   │           │   └── fd1b291129c607e5d49799f87cb219b27f98acdf
-│   │           ├── refs
-│   │           │   └── main
-│   │           └── snapshots
-│   │               └── fa97f6e7cb1a59073dff9e6b13e2715cf7475ac9
-│   │                   ├── 1_Pooling
-│   │                   │   └── config.json -> ../../../blobs/d1514c3162bbe87b343f565fadc62e6c06f04f03
-│   │                   ├── config.json -> ../../blobs/72b987fd805cfa2b58c4c8c952b274a11bfd5a00
-│   │                   ├── config_sentence_transformers.json -> ../../blobs/fd1b291129c607e5d49799f87cb219b27f98acdf
-│   │                   ├── data_config.json -> ../../blobs/2e85f0eac205cf444bdf97ede4935603ca6a0416
-│   │                   ├── model.safetensors -> ../../blobs/53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db
-│   │                   ├── modules.json -> ../../blobs/952a9b81c0bfd99800fabf352f69c7ccd46c5e43
-│   │                   ├── onnx
-│   │                   │   ├── model_O1.onnx -> ../../../blobs/1391c6fc20b5530250bc15cbe1f47578ffeca55ab0551d335cc668b6299a88ec
-│   │                   │   ├── model_O2.onnx -> ../../../blobs/1de3905029190b398c7d300b530e320cf4b5e7d3dfb9af1429ebd73fd9a16faf
-│   │                   │   ├── model_O3.onnx -> ../../../blobs/a44f671e364dddbac31f203f07b91be6b0a35e51936e5ebfab65b6d9538b83ff
-│   │                   │   ├── model_O4.onnx -> ../../../blobs/1667d7f3ba669048b13a96ee3a44456d5e42c8f44588ae8b603430e16160c485
-│   │                   │   ├── model.onnx -> ../../../blobs/6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452
-│   │                   │   ├── model_qint8_arm64.onnx -> ../../../blobs/4278337fd0ff3c68bfb6291042cad8ab363e1d9fbc43dcb499fe91c871902474
-│   │                   │   ├── model_qint8_avx512.onnx -> ../../../blobs/4278337fd0ff3c68bfb6291042cad8ab363e1d9fbc43dcb499fe91c871902474
-│   │                   │   ├── model_qint8_avx512_vnni.onnx -> ../../../blobs/4278337fd0ff3c68bfb6291042cad8ab363e1d9fbc43dcb499fe91c871902474
-│   │                   │   └── model_quint8_avx2.onnx -> ../../../blobs/b941bf19f1f1283680f449fa6a7336bb5600bdcd5f84d10ddc5cd72218a0fd21
-│   │                   ├── openvino
-│   │                   │   ├── openvino_model.bin -> ../../../blobs/8b86cab4722e2aefab310cf96d4d5a9eb3b187f7d9670a082afc55c7fa0d392a
-│   │                   │   ├── openvino_model_qint8_quantized.bin -> ../../../blobs/c92ea4af3c6bc7b4a0f3b3d61b147c850f4dbdd7c9e7beee0c0c70dc12da289b
-│   │                   │   ├── openvino_model_qint8_quantized.xml -> ../../../blobs/7152d195a075cf3f3dc3c3d6308d845f88e0117f
-│   │                   │   └── openvino_model.xml -> ../../../blobs/5d24a16700f0198908929370f59330fb8d486b1b
-│   │                   ├── pytorch_model.bin -> ../../blobs/c3a85f238711653950f6a79ece63eb0ea93d76f6a6284be04019c53733baf256
-│   │                   ├── README.md -> ../../blobs/8cfec92309f5626a223304af2423e332f6d31887
-│   │                   ├── rust_model.ot -> ../../blobs/2d98d96d278348988f2744e6445b8bc16d921c3f6e17c667362f3cb353007aea
-│   │                   ├── sentence_bert_config.json -> ../../blobs/59d594003bf59880a884c574bf88ef7555bb0202
-│   │                   ├── special_tokens_map.json -> ../../blobs/e7b0375001f109a6b8873d756ad4f7bbb15fbaa5
-│   │                   ├── tf_model.h5 -> ../../blobs/24c06a7429b843d46e40c6b167122053921bf94dce2e5550ea5c07fabc597646
-│   │                   ├── tokenizer_config.json -> ../../blobs/c79f2b6a0cea6f4b564fed1938984bace9d30ff0
-│   │                   ├── tokenizer.json -> ../../blobs/cb202bfe2e3c98645018a6d12f182a434c9d3e02
-│   │                   ├── train_script.py -> ../../blobs/82b47b6277499b8f17d139d0c651a6f961c06124
-│   │                   └── vocab.txt -> ../../blobs/fb140275c155a9c7c5a3b3e0e77a9e839594a938
-│   └── image
-│       └── generations
 ├── Cargo.lock
 ├── Cargo.toml
 ├── clippy.toml
@@ -5666,6 +5597,17 @@
 │       ├── shared_license_header_utf8.txt
 │       ├── third_party_license_header_2.txt
 │       └── third_party_license_header.txt
+├── distribution
+│   ├── Cargo.toml
+│   └── src
+│       ├── api.rs
+│       ├── block_metadata_squid.rs
+│       ├── integration.rs
+│       ├── lib.rs
+│       ├── mining_config.rs
+│       ├── mining_params.rs
+│       ├── reward.rs
+│       └── validation.rs
 ├── dkg
 │   ├── Cargo.toml
 │   └── src
@@ -5779,6 +5721,12 @@
 │   │   │       ├── connection_manager.rs
 │   │   │       ├── historical_data_service.rs
 │   │   │       ├── lib.rs
+│   │   │       ├── live_data_service
+│   │   │       │   ├── data_client.rs
+│   │   │       │   ├── data_manager.rs
+│   │   │       │   ├── fetch_manager.rs
+│   │   │       │   ├── in_memory_cache.rs
+│   │   │       │   └── mod.rs
 │   │   │       ├── main.rs
 │   │   │       ├── service.rs
 │   │   │       └── test.rs
@@ -6491,16 +6439,6 @@
 │       │   ├── shared_mempool_test.rs
 │       │   └── test_framework.rs
 │       └── thread_pool.rs
-├── mining
-│   ├── Cargo.toml
-│   └── src
-│       ├── api.rs
-│       ├── integration.rs
-│       ├── lib.rs
-│       ├── mining_config.rs
-│       ├── mining_params.rs
-│       ├── reward.rs
-│       └── validation.rs
 ├── network
 │   ├── benchmark
 │   │   ├── Cargo.toml
@@ -18579,7 +18517,6 @@
 │   │   │   │       │   ├── mod.rs
 │   │   │   │       │   ├── module_storage.rs
 │   │   │   │       │   ├── publishing.rs
-│   │   │   │       │   ├── struct_name_index_map.rs
 │   │   │   │       │   ├── ty_cache.rs
 │   │   │   │       │   ├── ty_layout_converter.rs
 │   │   │   │       │   ├── ty_tag_converter.rs
@@ -19127,7 +19064,8 @@
 │   │   │           │   ├── mod.rs
 │   │   │           │   ├── runtime_access_specifier.rs
 │   │   │           │   ├── runtime_access_specifiers_prop_tests.rs
-│   │   │           │   └── runtime_types.rs
+│   │   │           │   ├── runtime_types.rs
+│   │   │           │   └── struct_name_indexing.rs
 │   │   │           ├── natives
 │   │   │           │   ├── function.rs
 │   │   │           │   └── mod.rs
@@ -20243,6 +20181,7 @@
 │       ├── Cargo.toml
 │       └── src
 │           └── main.rs
+├── tree_output.txt
 ├── tsconfig.json
 ├── types
 │   ├── benches
@@ -20532,4 +20471,4 @@
 │       └── vm_validator.rs
 └── webui.db
 
-2496 directories, 18036 files
+2482 directories, 17989 files
